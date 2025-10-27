@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Himānandaḥ — The Moonlight of the Soul</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light">
+  <div class="app">
+    <aside class="sidebar">
+      <div class="logo">Himānandaḥ</div>
+      <nav>
+        <a class="active">Home</a>
+        <a>Bhajans & Music</a>
+        <a>Healing Practices</a>
+        <a>Reflections</a>
+        <a>Community</a>
+        <a>Settings</a>
+      </nav>
+      <div class="credit">© Himānandaḥ</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="title">
+          <h1>Himānandaḥ</h1>
+          <p class="subtitle">The Moonlight of the Soul</p>
+        </div>
+        <div class="controls">
+          <button id="toggleTheme">Toggle Night</button>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div class="hero-content">
+          <h2>A quiet space to return home — to the light within.</h2>
+          <p>Explore short practices, soulful songs, and gentle movement — daily moments of calm.</p>
+          <div class="hero-cta">
+            <a class="btn">Begin the Journey</a>
+            <a class="btn ghost">Listen to a Bhajan</a>
+          </div>
+        </div>
+        <div class="hero-art"></div>
+      </section>
+
+      <section class="cards">
+        <article class="card">
+          <h3>Healing Reflections</h3>
+          <p>Short readings, quotes, and mindful notes for daily nourishment.</p>
+          <div class="card-actions"><a class="btn small">Read More</a></div>
+        </article>
+
+        <article class="card">
+          <h3>Soulful Bhajans</h3>
+          <p>Handpicked bhajans and chants — a playlist of soft devotion and presence.</p>
+          <div class="card-actions"><a class="btn small">Listen</a></div>
+        </article>
+
+        <article class="card">
+          <h3>Body & Breath</h3>
+          <p>Gentle movement and breathing practices to restore balance and ease.</p>
+          <div class="card-actions"><a class="btn small">Explore</a></div>
+        </article>
+      </section>
+
+      <footer class="footer">
+        © 2025 Himānandaḥ — The Moonlight of the Soul
+      </footer>
+    </main>
+  </div>
+
+<script>
+const btn = document.getElementById('toggleTheme');
+btn.addEventListener('click', ()=> {
+  document.body.classList.toggle('dark');
+  document.body.classList.toggle('light');
+});
+</script>
+</body>
+</html>
