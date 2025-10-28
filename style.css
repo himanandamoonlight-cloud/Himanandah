@@ -1,0 +1,67 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #E6E6FA, #F3E5F5);
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+header {
+  text-align: center;
+  padding: 2rem;
+}
+.subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: #555;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+.card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 320px;
+  padding: 1.5rem;
+  text-align: center;
+}
+iframe {
+  width: 100%;
+  height: 200px;
+  border-radius: 1rem;
+}
+button {
+  background-color: #c8a2c8;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #b48cbf;
+}
+.note {
+  background: #f4f0ff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 0.5rem 0;
+}
+textarea {
+  width: 100%;
+  min-height: 80px;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}

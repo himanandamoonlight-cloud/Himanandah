@@ -1,103 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Himānandaḥ — The Moonlight of the Soul</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(180deg, #edf2f7 0%, #f8f9fa 100%);
-      font-family: 'Playfair Display', serif;
-      color: #333;
-      text-align: center;
-    }
-    header {
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(6px);
-      padding: 40px 0 20px;
-      border-bottom: 1px solid #ddd;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.2rem;
-      letter-spacing: 0.5px;
-      color: #2a2a2a;
-    }
-    header p {
-      margin-top: 8px;
-      color: #555;
-      font-style: italic;
-      font-size: 1.1rem;
-    }
-    #nama-japa-card {
-      max-width: 600px;
-      margin: 60px auto;
-      padding: 24px;
-      background: #ffffffd0;
-      border-radius: 16px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
-      font-family: 'Noto Sans Devanagari', sans-serif;
-    }
-    #nama-japa-card h2 {
-      color: #3c3c3c;
-      margin-bottom: 16px;
-      font-weight: 600;
-    }
-    #message {
-      color: #555;
-      margin-top: 16px;
-      line-height: 1.6;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Himānandaḥ – The Moonlight of the Soul</title>
+  <link href="style.css" rel="stylesheet" />
+  <script defer src="app.js"></script>
 </head>
-
 <body>
   <header>
     <h1>Himānandaḥ</h1>
-    <p>— The Moonlight of the Soul —</p>
+    <p class="subtitle">The Moonlight of the Soul</p>
   </header>
 
-  <div id="nama-japa-card">
-    <h2>Nāma Japa – The Chant of the Soul</h2>
-    <div id="video-container"></div>
-    <p id="message"></p>
-  </div>
+  <main>
+    <section class="cards">
+      <div class="card">
+        <h2>🌿 Body</h2>
+        <p>Satvic Yoga Series – Reconnect through mindful movement.</p>
+        <iframe src="https://www.youtube.com/embed/videoseries?list=TLPQMjgxMDIwMjV1Cf4P1c1Msw" frameborder="0" allowfullscreen></iframe>
+      </div>
 
-  <script>
-    function showNamaJapa() {
-      const now = new Date();
-      const hours = now.getHours();
-      const minutes = now.getMinutes();
-      const videoContainer = document.getElementById("video-container");
-      const message = document.getElementById("message");
+      <div class="card">
+        <h2>💫 Mind</h2>
+        <p>Guided meditations, reflections & emotional release through AI companion.</p>
+        <button class="chat-btn">Open Healing Chatbot</button>
+      </div>
 
-      // Reset content
-      videoContainer.innerHTML = "";
-      message.textContent = "";
+      <div class="card">
+        <h2>🔔 Soul</h2>
+        <p>Daily Naam Jap at 5:30 AM & 6:00 PM — let your being resonate with devotion.</p>
+        <iframe src="https://www.youtube.com/embed/xy2xoI3SUWk" frameborder="0" allowfullscreen></iframe>
+      </div>
 
-      // Define display times
-      const morningStart = (hours === 5 && minutes >= 30) || (hours > 5 && hours < 10);
-      const eveningStart = hours >= 18;
+      <div class="card">
+        <h2>✨ Moonlight Notes</h2>
+        <p>Original reflections from Himānandaḥ — serene, soulful, and copy-protected.</p>
+        <div class="note">"Peace begins the moment you choose stillness over noise."</div>
+        <button class="like-btn">❤️ Like</button>
+        <span id="like-count">0</span>
+      </div>
 
-      // Show video if it's time
-      if (morningStart || eveningStart) {
-        videoContainer.innerHTML = `
-          <iframe width="560" height="315" 
-            src="https://www.youtube.com/embed/g1zd0hUIsM8"
-            title="Nāma Japa" frameborder="0" allowfullscreen 
-            style="border-radius: 12px;"></iframe>`;
-      } else {
-        message.innerHTML = `
-          🌼 <b>प्रभात और संध्या में मिलते हैं नाम जप के साथ।</b><br>
-          <i>We meet again at dawn and dusk for the Nāma Japa.</i>`;
-      }
-    }
+      <div class="card">
+        <h2>🪞 Community Q&A</h2>
+        <p>Share and learn — your light may guide someone else’s path.</p>
+        <form id="qa-form">
+          <textarea placeholder="Ask or share..."></textarea>
+          <button type="submit">Post</button>
+        </form>
+        <div id="qa-list"></div>
+      </div>
 
-    showNamaJapa();
-    setInterval(showNamaJapa, 60000); // refresh every minute
-  </script>
+      <div class="card">
+        <h2>💌 Private Feedback</h2>
+        <p>Your thoughts are sacred and confidential — write to us privately.</p>
+        <form action="mailto:your-email@example.com" method="POST" enctype="text/plain">
+          <textarea placeholder="Your message..."></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Himānandaḥ. All rights reserved.</p>
+  </footer>
 </body>
 </html>
