@@ -1,81 +1,103 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Himānandaḥ — The Moonlight of the Soul</title>
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(180deg, #edf2f7 0%, #f8f9fa 100%);
+      font-family: 'Playfair Display', serif;
+      color: #333;
+      text-align: center;
+    }
+    header {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(6px);
+      padding: 40px 0 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      letter-spacing: 0.5px;
+      color: #2a2a2a;
+    }
+    header p {
+      margin-top: 8px;
+      color: #555;
+      font-style: italic;
+      font-size: 1.1rem;
+    }
+    #nama-japa-card {
+      max-width: 600px;
+      margin: 60px auto;
+      padding: 24px;
+      background: #ffffffd0;
+      border-radius: 16px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+      font-family: 'Noto Sans Devanagari', sans-serif;
+    }
+    #nama-japa-card h2 {
+      color: #3c3c3c;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    #message {
+      color: #555;
+      margin-top: 16px;
+      line-height: 1.6;
+    }
+  </style>
 </head>
-<body class="light">
-  <div class="app">
-    <aside class="sidebar">
-      <div class="logo">Himānandaḥ</div>
-      <nav>
-        <a class="active">Home</a>
-        <a>Bhajans & Music</a>
-        <a>Healing Practices</a>
-        <a>Reflections</a>
-        <a>Community</a>
-        <a>Settings</a>
-      </nav>
-      <div class="credit">© Himānandaḥ</div>
-    </aside>
 
-    <main class="main">
-      <header class="topbar">
-        <div class="title">
-          <h1>Himānandaḥ</h1>
-          <p class="subtitle">The Moonlight of the Soul</p>
-        </div>
-        <div class="controls">
-          <button id="toggleTheme">Toggle Night</button>
-        </div>
-      </header>
+<body>
+  <header>
+    <h1>Himānandaḥ</h1>
+    <p>— The Moonlight of the Soul —</p>
+  </header>
 
-      <section class="hero">
-        <div class="hero-content">
-          <h2>A quiet space to return home — to the light within.</h2>
-          <p>Explore short practices, soulful songs, and gentle movement — daily moments of calm.</p>
-          <div class="hero-cta">
-            <a class="btn">Begin the Journey</a>
-            <a class="btn ghost">Listen to a Bhajan</a>
-          </div>
-        </div>
-        <div class="hero-art"></div>
-      </section>
-
-      <section class="cards">
-        <article class="card">
-          <h3>Healing Reflections</h3>
-          <p>Short readings, quotes, and mindful notes for daily nourishment.</p>
-          <div class="card-actions"><a class="btn small">Read More</a></div>
-        </article>
-
-        <article class="card">
-          <h3>Soulful Bhajans</h3>
-          <p>Handpicked bhajans and chants — a playlist of soft devotion and presence.</p>
-          <div class="card-actions"><a class="btn small">Listen</a></div>
-        </article>
-
-        <article class="card">
-          <h3>Body & Breath</h3>
-          <p>Gentle movement and breathing practices to restore balance and ease.</p>
-          <div class="card-actions"><a class="btn small">Explore</a></div>
-        </article>
-      </section>
-
-      <footer class="footer">
-        © 2025 Himānandaḥ — The Moonlight of the Soul
-      </footer>
-    </main>
+  <div id="nama-japa-card">
+    <h2>Nāma Japa – The Chant of the Soul</h2>
+    <div id="video-container"></div>
+    <p id="message"></p>
   </div>
 
-<script>
-const btn = document.getElementById('toggleTheme');
-btn.addEventListener('click', ()=> {
-  document.body.classList.toggle('dark');
-  document.body.classList.toggle('light');
-});
-</script>
+  <script>
+    function showNamaJapa() {
+      const now = new Date();
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
+      const videoContainer = document.getElementById("video-container");
+      const message = document.getElementById("message");
+
+      // Reset content
+      videoContainer.innerHTML = "";
+      message.textContent = "";
+
+      // Define display times
+      const morningStart = (hours === 5 && minutes >= 30) || (hours > 5 && hours < 10);
+      const eveningStart = hours >= 18;
+
+      // Show video if it's time
+      if (morningStart || eveningStart) {
+        videoContainer.innerHTML = `
+          <iframe width="560" height="315" 
+            src="https://www.youtube.com/embed/g1zd0hUIsM8"
+            title="Nāma Japa" frameborder="0" allowfullscreen 
+            style="border-radius: 12px;"></iframe>`;
+      } else {
+        message.innerHTML = `
+          🌼 <b>प्रभात और संध्या में मिलते हैं नाम जप के साथ।</b><br>
+          <i>We meet again at dawn and dusk for the Nāma Japa.</i>`;
+      }
+    }
+
+    showNamaJapa();
+    setInterval(showNamaJapa, 60000); // refresh every minute
+  </script>
 </body>
 </html>
