@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌙 Moonlight Developer Assistant</title>
+  <style>
+    body {
+      font-family: "Inter", system-ui, sans-serif;
+      background: radial-gradient(circle at top, #f6f2ff, #e8e3ff);
+      color: #333;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .chat-container {
+      width: 90%;
+      max-width: 700px;
+      height: 80vh;
+      background: #ffffffa8;
+      backdrop-filter: blur(20px);
+      border-radius: 24px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chat-header {
+      background: linear-gradient(135deg, #c3b8ff, #a6a1ff);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .chat-messages {
+      flex: 1;
+      padding: 1rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .message {
+      max-width: 80%;
+      padding: 0.8rem 1rem;
+      border-radius: 1rem;
+      line-height: 1.4;
+    }
+
+    .user {
+      align-self: flex-end;
+      background: #d9d2ff;
+    }
+
+    .bot {
+      align-self: flex-start;
+      background: #f1f0ff;
+    }
+
+    .chat-input {
+      display: flex;
+      border-top: 1px solid #ddd;
+      padding: 0.5rem;
+      background: #fff;
+    }
+
+    input {
+      flex: 1;
+      border: none;
+      padding: 0.8rem;
+      border-radius: 8px;
+      outline: none;
+      font-size: 1rem;
+    }
+
+    button {
+      border: none;
+      background: #a59bff;
+      color: white;
+      padding: 0.8rem 1.2rem;
+      border-radius: 8px;
+      margin-left: 0.5rem;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    button:hover {
+      background: #8e82ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-header">🌙 Moonlight Developer Assistant</div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="message bot">
+        Hello, I’m the Moonlight Developer Assistant — calm and capable.  
+        How may I help you with your site, code, or design today?
+      </div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Ask about code, design, or Himānandaḥ site..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    async function sendMessage() {
+      const input = document.getElementById('userInput');
+      const chatMessages = document.getElementById('chatMessages');
+      const userMessage = input.value.trim();
+      if (!userMessage) return;
+
+      const userDiv = document.createElement('div');
+      userDiv.className = 'message user';
+      userDiv.textContent = userMessage;
+      chatMessages.appendChild(userDiv);
+      input.value = '';
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+
+      const botDiv = document.createElement('div');
+      botDiv.className = 'message bot';
+      botDiv.textContent = "Thinking softly under the moonlight...";
+      chatMessages.appendChild(botDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+
+      // This is where the backend or OpenAI API can later connect
+      // For now, simulate a calm intelligent response
+      setTimeout(() => {
+        botDiv.textContent = "That’s noted. I can assist with development or design insights — integration with real AI (e.g., ChatGPT API) can be added here soon.";
+      }, 1500);
+    }
+  </script>
+</body>
+</html>
