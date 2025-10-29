@@ -1,0 +1,16 @@
+<div id="moonlight-chatbot" style="position: fixed; bottom: 30px; right: 30px; z-index: 9999;">
+  <button id="moonlight-toggle" style="background: #c5b6ff; color: #fff; border: none; border-radius: 50%; width: 60px; height: 60px; font-size: 24px; cursor: pointer;">💬</button>
+  <iframe id="moonlight-frame" src="" style="display:none; width: 400px; height: 500px; border: none; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);"></iframe>
+</div>
+
+<script>
+document.getElementById("moonlight-toggle").addEventListener("click", function() {
+  const frame = document.getElementById("moonlight-frame");
+  if (frame.style.display === "none") {
+    frame.src = "https://chat.openai.com"; // for now — your dev chat; later replaced with custom assistant
+    frame.style.display = "block";
+  } else {
+    frame.style.display = "none";
+  }
+});
+</script>
