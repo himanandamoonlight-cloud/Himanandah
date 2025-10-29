@@ -1,0 +1,14 @@
+{
+  "assistant_name": "Moonlight Chatbot",
+  "mode": "development_assistant",
+  "repo": "himanandamoonlight-cloud/himanandah",
+  "approval_before_push": true,
+  "auto_design_suggestions": true,
+  "style": "lavender_calm",
+  "visibility": "private",
+  "linked_services": {
+    "github": true,
+    "vercel": true
+  },
+  "description": "An internal AI companion that helps maintain and evolve the calm, soulful aesthetic of Himānandaḥ – The Moonlight of the Soul."
+}
