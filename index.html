@@ -1,69 +1,123 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Himānandaḥ – The Moonlight of the Soul</title>
-  <link href="style.css" rel="stylesheet" />
-  <script defer src="app.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Himānandaḥ — The Moonlight of the Soul</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Himānandaḥ</h1>
-    <p class="subtitle">The Moonlight of the Soul</p>
+  <header class="site-header">
+    <div class="brand"><span class="moon">🌕</span><div><h1>Himānandaḥ</h1><div class="tag">The Moonlight of the Soul</div></div></div>
   </header>
 
-  <main>
-    <section class="cards">
-      <div class="card">
-        <h2>🌿 Body</h2>
-        <p>Satvic Yoga Series – Reconnect through mindful movement.</p>
-        <iframe src="https://www.youtube.com/embed/videoseries?list=TLPQMjgxMDIwMjV1Cf4P1c1Msw" frameborder="0" allowfullscreen></iframe>
+  <main class="main-content">
+    <section class="cards" aria-label="Main cards">
+      <!-- Body Card -->
+      <div class="card" id="card-body" tabindex="0">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="icon">🌿</div>
+            <div class="title">Body</div>
+            <div class="sub">Satvic Movement</div>
+          </div>
+          <div class="card-back">
+            <div class="back-content">
+              <div class="back-title">Satvic Movement — 7-part</div>
+              <p class="muted">Open playlist:</p>
+              <a class="link" href="https://www.youtube.com/playlist?list=TLPQMjgxMDIwMjV1Cf4P1c1Msw" target="_blank" rel="noopener">Open Yoga Playlist ↗</a>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="card">
-        <h2>💫 Mind</h2>
-        <p>Guided meditations, reflections & emotional release through AI companion.</p>
-        <button class="chat-btn">Open Healing Chatbot</button>
+      <!-- Mind Card -->
+      <div class="card" id="card-mind" tabindex="0">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="icon">💫</div>
+            <div class="title">Mind</div>
+            <div class="sub">Meditation & Healing</div>
+          </div>
+          <div class="card-back">
+            <div class="back-content">
+              <div class="back-title">Gentle reflections</div>
+              <p class="muted">A calm companion and prompts to begin.</p>
+              <button class="btn small" id="openMindSample">Open prompt</button>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="card">
-        <h2>🔔 Soul</h2>
-        <p>Daily Naam Jap at 5:30 AM & 6:00 PM — let your being resonate with devotion.</p>
-        <iframe src="https://www.youtube.com/embed/xy2xoI3SUWk" frameborder="0" allowfullscreen></iframe>
+      <!-- Soul Card (scheduled) -->
+      <div class="card" id="card-soul" tabindex="0">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="icon">🔔</div>
+            <div class="title">Soul</div>
+            <div class="sub">Naam Jap (Scheduled)</div>
+            <div class="schedule">
+              <div>Morning — 5:30 AM</div>
+              <div>Evening — 6:00 PM</div>
+            </div>
+            <div id="countdown" class="countdown">Next session: —</div>
+          </div>
+          <div class="card-back">
+            <div class="back-content">
+              <div class="back-title">Naam Jap — Jai Shri Ram</div>
+              <p class="muted">Tap to open the scheduled chant (opens in new tab).</p>
+              <a class="link" id="openNaam" href="https://www.youtube.com/watch?v=xy2xoI3SUWk&list=LL&index=48" target="_blank" rel="noopener">Open Naam Jap ↗</a>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="card">
-        <h2>✨ Moonlight Notes</h2>
-        <p>Original reflections from Himānandaḥ — serene, soulful, and copy-protected.</p>
-        <div class="note">"Peace begins the moment you choose stillness over noise."</div>
-        <button class="like-btn">❤️ Like</button>
-        <span id="like-count">0</span>
+      <!-- Wisdom Card -->
+      <div class="card" id="card-wisdom" tabindex="0" role="button" aria-pressed="false">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="icon">🕯️</div>
+            <div class="title">Moonlight Notes</div>
+            <div class="sub">Reflections by Himānandaḥ</div>
+          </div>
+          <div class="card-back">
+            <div class="back-content">
+              <div class="back-title">Open Wisdom Page</div>
+              <p class="muted">Click to open the Moonlight Notes page.</p>
+              <button class="btn small" id="openWisdom">Open Notes</button>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="card">
-        <h2>🪞 Community Q&A</h2>
-        <p>Share and learn — your light may guide someone else’s path.</p>
-        <form id="qa-form">
-          <textarea placeholder="Ask or share..."></textarea>
-          <button type="submit">Post</button>
-        </form>
-        <div id="qa-list"></div>
-      </div>
-
-      <div class="card">
-        <h2>💌 Private Feedback</h2>
-        <p>Your thoughts are sacred and confidential — write to us privately.</p>
-        <form action="mailto:your-email@example.com" method="POST" enctype="text/plain">
-          <textarea placeholder="Your message..."></textarea>
-          <button type="submit">Send</button>
-        </form>
-      </div>
     </section>
   </main>
 
-  <footer>
-    <p>© 2025 Himānandaḥ. All rights reserved.</p>
-  </footer>
+  <!-- Wisdom overlay page -->
+  <div id="wisdomOverlay" class="overlay" aria-hidden="true">
+    <div class="overlay-inner">
+      <button id="closeWisdom" class="back-btn">← Back</button>
+      <h2>Moonlight Notes — by Himānandaḥ</h2>
+      <div class="notes-area" id="notesArea">
+        <!-- sticky notes placeholders -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Chatbot -->
+  <button id="chatToggle" class="chat-toggle" aria-label="Open chat">💬</button>
+  <div id="chatWindow" class="chat-window" aria-hidden="true">
+    <div class="chat-header">Himānandaḥ Companion <button id="closeChat" class="close-chat">✕</button></div>
+    <div id="chatBody" class="chat-body"></div>
+    <form id="chatForm" class="chat-form">
+      <input id="chatInput" placeholder="Breathe... share a feeling or ask gently" autocomplete="off"/>
+      <button type="submit" class="btn">Send</button>
+    </form>
+  </div>
+
+  <footer class="site-foot">© 2025 Himānandaḥ — The Moonlight of the Soul. All rights reserved.</footer>
+
+<script src="app.js"></script>
 </body>
 </html>
